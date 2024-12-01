@@ -54,22 +54,19 @@ public final class ConfigProvider {
 
         if (yamlConfigLocator.locateFromSystemProperty()) {
             // 1. Try loading YAML config if provided in system property
-            config =
-                    new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
+            config = new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
                             .setProperties(properties)
                             .build();
 
         } else if (yamlConfigLocator.locateInWorkDirOrOnClasspath()) {
             // 2. Try loading YAML config from the working directory or from the classpath
-            config =
-                    new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
+            config = new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
                             .setProperties(properties)
                             .build();
         } else {
             // 3. Loading the default YAML configuration file
             yamlConfigLocator.locateDefault();
-            config =
-                    new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
+            config = new YamlSeaTunnelConfigBuilder(yamlConfigLocator)
                             .setProperties(properties)
                             .build();
         }
@@ -132,21 +129,18 @@ public final class ConfigProvider {
 
         if (yamlConfigLocator.locateFromSystemProperty()) {
             // 1. Try loading config if provided in system property, and it is an YAML file
-            config =
-                    new YamlConfigBuilder(yamlConfigLocator.getIn())
+            config = new YamlConfigBuilder(yamlConfigLocator.getIn())
                             .setProperties(properties)
                             .build();
         } else if (yamlConfigLocator.locateInWorkDirOrOnClasspath()) {
             // 2. Try loading YAML config from the working directory or from the classpath
-            config =
-                    new YamlConfigBuilder(yamlConfigLocator.getIn())
+            config = new YamlConfigBuilder(yamlConfigLocator.getIn())
                             .setProperties(properties)
                             .build();
         } else {
             // 3. Loading the default YAML configuration file
             yamlConfigLocator.locateDefault();
-            config =
-                    new YamlConfigBuilder(yamlConfigLocator.getIn())
+            config = new YamlConfigBuilder(yamlConfigLocator.getIn())
                             .setProperties(properties)
                             .build();
         }
