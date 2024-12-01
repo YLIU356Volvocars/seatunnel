@@ -46,7 +46,8 @@ public final class ConfigProvider {
         return locateAndGetSeaTunnelConfig(null);
     }
 
-    @NonNull public static SeaTunnelConfig locateAndGetSeaTunnelConfig(Properties properties) {
+    @NonNull 
+    public static SeaTunnelConfig locateAndGetSeaTunnelConfig(Properties properties) {
 
         YamlSeaTunnelConfigLocator yamlConfigLocator = new YamlSeaTunnelConfigLocator();
         SeaTunnelConfig config;
@@ -79,7 +80,8 @@ public final class ConfigProvider {
         return locateAndGetSeaTunnelConfigFromString(source, null);
     }
 
-    @NonNull public static SeaTunnelConfig locateAndGetSeaTunnelConfigFromString(
+    @NonNull 
+    public static SeaTunnelConfig locateAndGetSeaTunnelConfigFromString(
             String source, Properties properties) {
         SeaTunnelConfig config;
         if (isNullOrEmptyAfterTrim(source)) {
@@ -96,7 +98,8 @@ public final class ConfigProvider {
         return config;
     }
 
-    @NonNull public static ClientConfig locateAndGetClientConfig() {
+    @NonNull 
+    public static ClientConfig locateAndGetClientConfig() {
         validateSuffixInSystemProperty(SYSPROP_CLIENT_CONFIG);
 
         ClientConfig config;
@@ -120,7 +123,8 @@ public final class ConfigProvider {
         return config;
     }
 
-    @NonNull public static Config locateAndGetMemberConfig(Properties properties) {
+    @NonNull 
+    public static Config locateAndGetMemberConfig(Properties properties) {
         validateSuffixInSystemProperty(SYSPROP_MEMBER_CONFIG);
 
         Config config;
